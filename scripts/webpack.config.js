@@ -10,14 +10,14 @@ config.context = path.resolve(__dirname, '..');
 
 // Client entry
 config.entry = {
-    VueTimeRange: path.resolve(__dirname, '../src/main')
+    TimeRange: path.resolve(__dirname, '../src/main')
 };
 
 // Basic output config
 config.output = {
     path: path.resolve(__dirname, '../dist'),
     filename: '[name].js',
-    library: "VueTimeRange",
+    library: "TimeRange",
     libraryTarget: "umd",
 };
 
@@ -88,7 +88,7 @@ config.module = {
 };
 process.traceDeprecation = true;
 if (process.env.NODE_ENV === 'production') {
-    config.output.filename = "components.min.js"
+    config.output.filename = "TimeRange.min.js"
     config.devtool = '#source-map';
 
     // Pass build environment inside bundle

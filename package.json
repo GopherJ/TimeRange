@@ -1,15 +1,15 @@
 {
-  "name": "Components",
+  "name": "TimeRange",
   "version": "0.0.1",
-  "description": "some vue components",
-  "main": "dist/components.min.js",
+  "description": "vue time range picker",
+  "main": "dist/timerange.min.js",
   "scripts": {
     "build": "cd scripts && build.sh",
     "lint": "./node_modules/.bin/eslint --ext .js,.vue src --fix"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/GopherJ/Components.git"
+    "url": "git://github.com/GopherJ/TimeRange.git"
   },
   "files": [
     "dist/",
@@ -19,35 +19,17 @@
   "license": "MIT",
   "keywords": [
     "vue",
-    "buefy",
-    "axios",
-    "vis"
+    "buefy"
   ],
   "dependencies": {
-    "animate.css": "^3.6.1",
-    "animated-vue": "^0.5.3",
-    "axios": "^0.18.0",
-    "bootstrap": "^4.0.0",
-    "brace": "^0.8.0",
     "buefy": "^0.6.3",
-    "chart.js": "^2.7.2",
-    "d3": "^4.13.0",
-    "d3-sankey-circular": "^0.23.0",
-    "eslint": "^4.19.0",
     "lodash": "^4.17.5",
     "moment": "^2.21.0",
-    "seedrandom": "^2.4.3",
-    "uuid": "^3.2.1",
-    "vis": "^4.21.0",
     "vue": "^2.5.13",
-    "vue-chart-js": "^1.4.1",
-    "vue-chartjs": "^3.3.1",
-    "vue-grid-layout": "^2.1.12",
-    "vue2-ace": "^1.0.6",
-    "vuedraggable": "^2.16.0",
     "vuex": "^3.0.1"
   },
   "devDependencies": {
+    "eslint": "^4.19.0",
     "autoprefixer": "^8.2.0",
     "babel-core": "^6.24.0",
     "babel-eslint": "^8.2.1",
