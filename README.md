@@ -40,7 +40,7 @@ Vue.use(TimeRange, {
 ```
 
 `template`
-```vuejs
+```vue
 <time-range labelPanel="TimeRange" labelStart="From" labelEnd="To" :auto-fold="true" @timeRangeChange="(n, o) => yourMethod(n, o)" @tagClicked="yourMethod"></time-range>
 ```
 
@@ -55,8 +55,8 @@ this.$store.state.TimeRange.dateTimeEnd
 
 `mutations`
 ```javascript
-this.$store.getters['TimeRange/EDIT_DATE_TIME_START'](new Date())
-this.$store.getters['TimeRange/EDIT_DATE_TIME_END'](new Date())
+this.$store.commit('TimeRange/EDIT_DATE_TIME_START', new Date())
+this.$store.commit('TimeRange/EDIT_DATE_TIME_END', new Date())
 ```
 
 
