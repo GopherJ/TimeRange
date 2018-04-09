@@ -2,7 +2,7 @@
   "name": "TimeRange",
   "version": "0.0.1",
   "description": "vue time range picker",
-  "main": "dist/timerange.min.js",
+  "main": "dist/TimeRange.min.js",
   "scripts": {
     "build": "cd scripts && build.sh",
     "lint": "./node_modules/.bin/eslint --ext .js,.vue src --fix"
@@ -56,7 +56,6 @@
     "vue-loader": "^11.1.4",
     "vue-style-loader": "^2.0.2",
     "vue-template-compiler": "^2.2.3",
-    "vue2-ace-editor": "0.0.8",
     "webpack": "^2.7.0"
   }
 }

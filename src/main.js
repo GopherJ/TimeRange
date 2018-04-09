@@ -7,7 +7,6 @@ const install = (Vue, options = {}) => {
         options.store.registerModule('TimeRange', TimeRangeStore);
     }
 
-    // Vue.use(AnimatedVue);
     Vue.component(TimeRange.name, TimeRange);
 };
 
