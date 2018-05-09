@@ -108,100 +108,100 @@
                         <div class="column is-four-fifths" v-show="mode === 'quick'">
                             <b-taglist>
                                 <button class="tag is-outlined is-primary button"
-                                        @click.stop="EDIT_THISDAYSOFAR(); modeAbsolute(); fold(); $emit('tagClicked');">
+                                        @click.stop="EDIT_THISDAYSOFAR(); modeAbsolute(); fold(); $emit('tag-click');">
                                     This day so far
                                 </button>
                                 <button class="tag is-outlined is-primary button"
-                                        @click.stop="EDIT_TODAY(); modeAbsolute(); fold(); $emit('tagClicked');">Today
+                                        @click.stop="EDIT_TODAY(); modeAbsolute(); fold(); $emit('tag-click');">Today
                                 </button>
                                 <button class="tag is-outlined is-primary button"
-                                        @click.stop="EDIT_YESTERDAY(); modeAbsolute(); fold(); $emit('tagClicked');">
+                                        @click.stop="EDIT_YESTERDAY(); modeAbsolute(); fold(); $emit('tag-click');">
                                     Yesterday
                                 </button>
                                 <button class="tag is-outlined is-primary button"
-                                        @click.stop="EDIT_THISWEEK(); modeAbsolute(); fold(); $emit('tagClicked');">This
+                                        @click.stop="EDIT_THISWEEK(); modeAbsolute(); fold(); $emit('tag-click');">This
                                     week
                                 </button>
                                 <button class="tag is-outlined is-primary button"
-                                        @click.stop="EDIT_THISMONTH(); modeAbsolute(); fold(); $emit('tagClicked');">
+                                        @click.stop="EDIT_THISMONTH(); modeAbsolute(); fold(); $emit('tag-click');">
                                     This month
                                 </button>
                                 <button class="tag is-outlined is-primary button"
-                                        @click.stop="EDIT_THISYEAR(); modeAbsolute(); fold(); $emit('tagClicked');">This
+                                        @click.stop="EDIT_THISYEAR(); modeAbsolute(); fold(); $emit('tag-click');">This
                                     year
                                 </button>
                                 <button class="tag is-outlined is-primary button"
-                                        @click.stop="EDIT_WEEKTODATE(); modeAbsolute(); fold(); $emit('tagClicked');">
+                                        @click.stop="EDIT_WEEKTODATE(); modeAbsolute(); fold(); $emit('tag-click');">
                                     Week to date
                                 </button>
                                 <button class="tag is-outlined is-primary button"
-                                        @click.stop="EDIT_MONTHTODATE(); modeAbsolute(); fold(); $emit('tagClicked');">
+                                        @click.stop="EDIT_MONTHTODATE(); modeAbsolute(); fold(); $emit('tag-click');">
                                     Month to date
                                 </button>
                                 <button class="tag is-outlined is-primary button"
-                                        @click.stop="EDIT_YEARTODATE(); modeAbsolute(); fold(); $emit('tagClicked');">
+                                        @click.stop="EDIT_YEARTODATE(); modeAbsolute(); fold(); $emit('tag-click');">
                                     Year to date
                                 </button>
                                 <button class="tag is-outlined is-primary button"
-                                        @click.stop="EDIT_LAST15MINUTES(); modeAbsolute(); fold(); $emit('tagClicked');">
+                                        @click.stop="EDIT_LAST15MINUTES(); modeAbsolute(); fold(); $emit('tag-click');">
                                     Last 15 minutes
                                 </button>
                                 <button class="tag is-outlined is-primary button"
-                                        @click.stop="EDIT_LAST30MINUTES(); modeAbsolute(); fold(); $emit('tagClicked');">
+                                        @click.stop="EDIT_LAST30MINUTES(); modeAbsolute(); fold(); $emit('tag-click');">
                                     Last 30 minutes
                                 </button>
                                 <button class="tag is-outlined is-primary button"
-                                        @click.stop="EDIT_LAST45MINUTES(); modeAbsolute(); fold(); $emit('tagClicked');">
+                                        @click.stop="EDIT_LAST45MINUTES(); modeAbsolute(); fold(); $emit('tag-click');">
                                     Last 45 minutes
                                 </button>
                                 <button class="tag is-outlined is-primary button"
-                                        @click.stop="EDIT_LAST1HOUR(); modeAbsolute(); fold(); $emit('tagClicked');">
+                                        @click.stop="EDIT_LAST1HOUR(); modeAbsolute(); fold(); $emit('tag-click');">
                                     Last 1 hour
                                 </button>
                                 <button class="tag is-outlined is-primary button"
-                                        @click.stop="EDIT_LAST4HOURS(); modeAbsolute(); fold(); $emit('tagClicked');">
+                                        @click.stop="EDIT_LAST4HOURS(); modeAbsolute(); fold(); $emit('tag-click');">
                                     Last 4 hours
                                 </button>
                                 <button class="tag is-outlined is-primary button"
-                                        @click.stop="EDIT_LAST12HOURS(); modeAbsolute(); fold(); $emit('tagClicked');">
+                                        @click.stop="EDIT_LAST12HOURS(); modeAbsolute(); fold(); $emit('tag-click');">
                                     Last 12 hours
                                 </button>
                                 <button class="tag is-outlined is-primary button"
-                                        @click.stop="EDIT_LAST24HOURS(); modeAbsolute(); fold(); $emit('tagClicked');">
+                                        @click.stop="EDIT_LAST24HOURS(); modeAbsolute(); fold(); $emit('tag-click');">
                                     Last 24 hours
                                 </button>
                                 <button class="tag is-outlined is-primary button"
-                                        @click.stop="EDIT_LAST7DAYS(); modeAbsolute(); fold(); $emit('tagClicked');">
+                                        @click.stop="EDIT_LAST7DAYS(); modeAbsolute(); fold(); $emit('tag-click');">
                                     Last 7 days
                                 </button>
                                 <button class="tag is-outlined is-primary button"
-                                        @click.stop="EDIT_LAST30DAYS(); modeAbsolute(); fold(); $emit('tagClicked');">
+                                        @click.stop="EDIT_LAST30DAYS(); modeAbsolute(); fold(); $emit('tag-click');">
                                     Last 30 days
                                 </button>
                                 <button class="tag is-outlined is-primary button"
-                                        @click.stop="EDIT_LAST60DAYS(); modeAbsolute(); fold(); $emit('tagClicked');">
+                                        @click.stop="EDIT_LAST60DAYS(); modeAbsolute(); fold(); $emit('tag-click');">
                                     Last 60 days
                                 </button>
                                 <button class="tag is-outlined is-primary button"
-                                        @click.stop="EDIT_LAST90DAYS(); modeAbsolute(); fold(); $emit('tagClicked');">
+                                        @click.stop="EDIT_LAST90DAYS(); modeAbsolute(); fold(); $emit('tag-click');">
                                     Last 90 days
                                 </button>
 
                                 <button class="tag is-outlined is-primary button"
-                                        @click.stop="EDIT_LAST6MONTHS(); modeAbsolute(); fold(); $emit('tagClicked');">
+                                        @click.stop="EDIT_LAST6MONTHS(); modeAbsolute(); fold(); $emit('tag-click');">
                                     Last 6 months
                                 </button>
 
                                 <button class="tag is-outlined is-primary button"
-                                        @click.stop="EDIT_LAST1YEAR(); modeAbsolute(); fold(); $emit('tagClicked');">
+                                        @click.stop="EDIT_LAST1YEAR(); modeAbsolute(); fold(); $emit('tag-click');">
                                     Last 1 year
                                 </button>
                                 <button class="tag is-outlined is-primary button"
-                                        @click.stop="EDIT_LAST2YEARS(); modeAbsolute(); fold(); $emit('tagClicked');">
+                                        @click.stop="EDIT_LAST2YEARS(); modeAbsolute(); fold(); $emit('tag-click');">
                                     Last 2 years
                                 </button>
                                 <button class="tag is-outlined is-primary button"
-                                        @click.stop="EDIT_LAST5YEARS(); modeAbsolute(); fold(); $emit('tagClicked');">
+                                        @click.stop="EDIT_LAST5YEARS(); modeAbsolute(); fold(); $emit('tag-click');">
                                     Last 5 years
                                 </button>
                             </b-taglist>
@@ -215,7 +215,7 @@
 </template>
 
 <script>
-/* eslint-disable */
+    /* eslint-disable */
     import {mapState, mapGetters, mapMutations} from 'vuex';
     import moment from 'moment';
 
@@ -232,34 +232,6 @@
         return colors[Math.floor(Math.random() * colors.length)];
     };
 
-    const SHORT_HANDS = {
-        EDIT_LAST15MINUTES: 'Last 15 minutes',
-        EDIT_LAST30MINUTES: 'Last 30 minutes',
-        EDIT_LAST45MINUTES: 'Last 45 minutes',
-        EDIT_LAST1HOUR: 'Last 1 hour',
-        EDIT_LAST4HOURS: 'Last 4 hours',
-        EDIT_LAST12HOURS: 'Last 12 hours',
-        EDIT_LAST24HOURS: 'Last 24 hours',
-        EDIT_LAST7DAYS: 'Last 7 days',
-        EDIT_LAST30DAYS: 'Last 30 days',
-        EDIT_LAST60DAYS: 'Last 60 days',
-        EDIT_LAST90DAYS: 'Last 90 days',
-        EDIT_LAST6MONTHS: 'Last 6 months',
-        EDIT_LAST1YEAR: 'Last 1 year',
-        EDIT_LAST2YEARS: 'Last 2 years',
-        EDIT_LAST5YEARS: 'Last 5 years',
-        EDIT_THISDAYSOFAR: 'This day so far',
-        EDIT_TODAY: 'Today',
-        EDIT_YESTERDAY: 'Yesterday',
-        EDIT_THISWEEK: 'This week',
-        EDIT_THISMONTH: 'This month',
-        EDIT_THISYEAR: 'This year',
-        EDIT_WEEKTODATE: 'Week to date',
-        EDIT_MONTHTODATE: 'Month to date',
-        EDIT_YEARTODATE: 'Year to date',
-    };
-
-
     export default {
         name: 'time-range',
         data() {
@@ -267,7 +239,6 @@
                 eventsStart: [],
                 eventsEnd: [],
                 mode: 'absolute',
-                tags: SHORT_HANDS,
                 isOpen: true,
             };
         },
@@ -346,7 +317,31 @@
             ...mapMutations('TimeRange', [
                 'EDIT_DATE_TIME_START',
                 'EDIT_DATE_TIME_END',
-                ...Object.keys(SHORT_HANDS),
+
+                'EDIT_LAST15MINUTES',
+                'EDIT_LAST30MINUTES',
+                'EDIT_LAST45MINUTES',
+                'EDIT_LAST1HOUR',
+                'EDIT_LAST4HOURS',
+                'EDIT_LAST12HOURS',
+                'EDIT_LAST24HOURS',
+                'EDIT_LAST7DAYS',
+                'EDIT_LAST30DAYS',
+                'EDIT_LAST60DAYS',
+                'EDIT_LAST90DAYS',
+                'EDIT_LAST6MONTHS',
+                'EDIT_LAST1YEAR',
+                'EDIT_LAST2YEARS',
+                'EDIT_LAST5YEARS',
+                'EDIT_THISDAYSOFAR',
+                'EDIT_TODAY',
+                'EDIT_YESTERDAY',
+                'EDIT_THISWEEK',
+                'EDIT_THISMONTH',
+                'EDIT_THISYEAR',
+                'EDIT_WEEKTODATE',
+                'EDIT_MONTHTODATE',
+                'EDIT_YEARTODATE',
             ]),
             modeQuick() {
                 this.mode = 'quick';
@@ -596,7 +591,7 @@
 
         },
         mounted() {
-            this.$watch(vm => [
+            this.unwatch = this.$watch(vm => [
                 vm.dateTimeStart.valueOf(),
                 vm.dateTimeEnd.valueOf()
             ].join('-'), function (n, o) {
@@ -608,8 +603,11 @@
                     .map(el => Number.parseInt(el, 10))
                     .map(timestamp => new Date(timestamp));
 
-                this.$emit('timeRangeChange', TimeRangeNew, TimeRangeOld);
+                this.$emit('time-range-change', TimeRangeNew, TimeRangeOld);
             });
+        },
+        beforeDestroy() {
+            this.unwatch();
         }
     };
 </script>

@@ -1,5 +1,5 @@
 /* eslint-disable */
-import TimeRange from './components/TimeRange/TimeRange';
+import TimeRange from './components/TimeRange';
 import TimeRangeStore from './store/TimeRange';
 
 const install = (Vue, options = {}) => {
@@ -11,9 +11,11 @@ const install = (Vue, options = {}) => {
 };
 
 export default {
-    install,
+    install
+};
 
+export {
     TimeRange,
-    TimeRangeStore,
+    TimeRangeStore
 };
 

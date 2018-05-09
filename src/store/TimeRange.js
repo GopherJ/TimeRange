@@ -1,4 +1,5 @@
 /* eslint-disable */
+const namespaced = true;
 
 // date of now
 const now = new Date();
@@ -7,12 +8,6 @@ const now = new Date();
 const interval = (date, m) => new Date(
     date.getTime() - m * 60 * 1000,
 );
-
-const checkDate = (date) => {
-    const now = new Date();
-
-    return date > now ? now : date;
-};
 
 // state
 const state = {
@@ -310,7 +305,7 @@ const mutations = {
 };
 
 export default {
-    namespaced: true,
+    namespaced,
     state,
     getters,
     mutations,

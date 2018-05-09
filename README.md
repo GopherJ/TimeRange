@@ -1,4 +1,4 @@
-# TimeRange
+# VueTimeRange
 Time Range Picker Based On Buefy And Vue
 
 
@@ -11,6 +11,8 @@ Time Range Picker Based On Buefy And Vue
 
 ```javascript
 npm i -S GopherJ/TimeRange
+
+npm i -S vue-time-range
 ```
 
 
@@ -41,7 +43,7 @@ Vue.use(TimeRange, {
 
 `template`
 ```vue
-<time-range labelPanel="TimeRange" labelStart="From" labelEnd="To" :auto-fold="true" @timeRangeChange="(n, o) => yourMethod(n, o)" @tagClicked="yourMethod"></time-range>
+<time-range label-panel="TimeRange" label-start="From" label-end="To" :auto-fold="true" @time-range-change="(n, o) => yourMethod(n, o)" @tag-click="yourMethod"></time-range>
 ```
 
 
