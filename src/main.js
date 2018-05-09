@@ -1,6 +1,6 @@
 /* eslint-disable */
 import TimeRange from './components/TimeRange';
-import TimeRangeStore from './store/TimeRange';
+import TimeRangeStore from './store/TimeRangeStore';
 
 const install = (Vue, options = {}) => {
     if (options.store) {
