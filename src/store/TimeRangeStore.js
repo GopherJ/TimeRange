@@ -1,6 +1,10 @@
 /* eslint-disable */
 const namespaced = true;
 
+const isValidDate = (date) => {
+    return Object.prototype.toString.call(date) === '[object Date]' && !Number.isNaN(date.getTime());
+};
+
 // date of now
 const now = new Date();
 
@@ -61,10 +65,14 @@ const getters = {
 const mutations = {
     // mutations for updating `state.dateTimeStart` and `state.dateTimeEnd`
     EDIT_DATE_TIME_START(state, date) {
-        state.dateTimeStart = date;
+        if (isValidDate(date)) {
+            state.dateTimeStart = date;
+        }
     },
     EDIT_DATE_TIME_END(state, date) {
-        state.dateTimeEnd = date;
+        if (isValidDate(date)) {
+            state.dateTimeEnd = date;
+        }
     },
 
     // mutations for quickly choosing a time range
