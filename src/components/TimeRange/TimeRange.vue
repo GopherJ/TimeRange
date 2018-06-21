@@ -112,23 +112,39 @@
                                     This day so far
                                 </button>
                                 <button class="tag is-outlined is-primary button"
-                                        @click.stop="EDIT_TODAY(); modeAbsolute(); fold(); $emit('tag-click');">Today
+                                        @click.stop="EDIT_TODAY(); modeAbsolute(); fold(); $emit('tag-click');">
+                                    Today
                                 </button>
                                 <button class="tag is-outlined is-primary button"
                                         @click.stop="EDIT_YESTERDAY(); modeAbsolute(); fold(); $emit('tag-click');">
                                     Yesterday
                                 </button>
                                 <button class="tag is-outlined is-primary button"
-                                        @click.stop="EDIT_THISWEEK(); modeAbsolute(); fold(); $emit('tag-click');">This
-                                    week
+                                        @click.stop="EDIT_DAYBEFOREYESTERDAY(); modeAbsolute(); fold(); $emit('tag-click');">
+                                    Day before yesterday
+                                <button class="tag is-outlined is-primary button"
+                                        @click.stop="EDIT_THISWEEK(); modeAbsolute(); fold(); $emit('tag-click');">
+                                    This week
+                                </button>
+                                <button class="tag is-outlined is-primary button"
+                                        @click.stop="EDIT_PREVIOUSWEEK(); modeAbsolute(); fold(); $emit('tag-click');">
+                                    Previous week
                                 </button>
                                 <button class="tag is-outlined is-primary button"
                                         @click.stop="EDIT_THISMONTH(); modeAbsolute(); fold(); $emit('tag-click');">
                                     This month
                                 </button>
                                 <button class="tag is-outlined is-primary button"
-                                        @click.stop="EDIT_THISYEAR(); modeAbsolute(); fold(); $emit('tag-click');">This
-                                    year
+                                        @click.stop="EDIT_PREVIOUSMONTH(); modeAbsolute(); fold(); $emit('tag-click');">
+                                    Previous month
+                                </button>
+                                <button class="tag is-outlined is-primary button"
+                                        @click.stop="EDIT_THISYEAR(); modeAbsolute(); fold(); $emit('tag-click');">
+                                    This year
+                                </button>
+                                <button class="tag is-outlined is-primary button"
+                                        @click.stop="EDIT_PREVIOUSYEAR(); modeAbsolute(); fold(); $emit('tag-click');">
+                                    Previous year
                                 </button>
                                 <button class="tag is-outlined is-primary button"
                                         @click.stop="EDIT_WEEKTODATE(); modeAbsolute(); fold(); $emit('tag-click');">
@@ -342,6 +358,10 @@
                 'EDIT_WEEKTODATE',
                 'EDIT_MONTHTODATE',
                 'EDIT_YEARTODATE',
+                'EDIT_DAYBEFOREYESTERDAY',
+                'EDIT_PREVIOUSWEEK',
+                'EDIT_PREVIOUSMONTH',
+                'EDIT_PREVIOUSYEAR'
             ]),
             modeQuick() {
                 this.mode = 'quick';

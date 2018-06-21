@@ -195,6 +195,7 @@ const mutations = {
     },
     EDIT_YESTERDAY(s) {
         const date = new Date();
+
         s.dateTimeStart = new Date(
             date.getFullYear(),
             date.getMonth(),
@@ -204,6 +205,79 @@ const mutations = {
             date.getFullYear(),
             date.getMonth(),
             date.getDate(),
+        );
+    },
+    EDIT_DAYBEFOREYESTERDAY(s) {
+        const date = new Date();
+
+        s.dateTimeStart = new Date(
+            date.getFullYear(),
+            date.getMonth(),
+            date.getDate() - 2,
+        );
+        s.dateTimeEnd = new Date(
+            date.getFullYear(),
+            date.getMonth(),
+            date.getDate() - 1,
+        );
+    },
+    EDIT_PREVIOUSWEEK(s) {
+        const date = new Date();
+
+        if (date.getDay !== 0) {
+            s.dateTimeStart = new Date(
+                date.getFullYear(),
+                date.getMonth(),
+                date.getDate() - date.getDay() - 7 + 1,
+                0
+            );
+
+            s.dateTimeEnd = new Date(
+                date.getFullYear(),
+                date.getMonth(),
+                date.getDate() - date.getDay() + 1,
+                0
+            );
+        } else {
+            s.dateTimeStart = new Date(
+                date.getFullYear(),
+                date.getMonth(),
+                date.getDate() - 7 - 7 + 1,
+                0
+            );
+
+            s.dateTimeEnd = new Date(
+                date.getFullYear(),
+                date.getMonth(),
+                date.getDate() - 7 + 1,
+                0
+            );
+        }
+    },
+    EDIT_PREVIOUSMONTH(s) {
+        const date = new Date();
+
+        s.dateTimeStart = new Date(
+            date.getFullYear(),
+            date.getMonth() - 1
+        );
+
+        s.dateTimeEnd = new Date(
+            date.getFullYear(),
+            date.getMonth()
+        );
+    },
+    EDIT_PREVIOUSYEAR(s) {
+        const date = new Date();
+
+        s.dateTimeStart = new Date(
+            date.getFullYear() - 2,
+            12
+        );
+
+        s.dateTimeEnd = new Date(
+            date.getFullYear() - 1,
+            12
         );
     },
     EDIT_THISWEEK(s) {
@@ -222,7 +296,7 @@ const mutations = {
                 date.getDate() + (7 - date.getDay() + 1),
                 0,
             );
-        } else if (date.getDay() === 0) {
+        } else {
             s.dateTimeStart = new Date(
                 date.getFullYear(),
                 date.getMonth(),
