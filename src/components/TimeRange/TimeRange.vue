@@ -111,41 +111,52 @@
                                         @click.stop="EDIT_THISDAYSOFAR(); modeAbsolute(); fold(); $emit('tag-click');">
                                     This day so far
                                 </button>
+
                                 <button class="tag is-outlined is-primary button"
                                         @click.stop="EDIT_TODAY(); modeAbsolute(); fold(); $emit('tag-click');">
                                     Today
                                 </button>
+
                                 <button class="tag is-outlined is-primary button"
                                         @click.stop="EDIT_YESTERDAY(); modeAbsolute(); fold(); $emit('tag-click');">
                                     Yesterday
                                 </button>
+
                                 <button class="tag is-outlined is-primary button"
                                         @click.stop="EDIT_DAYBEFOREYESTERDAY(); modeAbsolute(); fold(); $emit('tag-click');">
                                     Day before yesterday
+                                </button>
+
                                 <button class="tag is-outlined is-primary button"
                                         @click.stop="EDIT_THISWEEK(); modeAbsolute(); fold(); $emit('tag-click');">
                                     This week
                                 </button>
+
                                 <button class="tag is-outlined is-primary button"
                                         @click.stop="EDIT_PREVIOUSWEEK(); modeAbsolute(); fold(); $emit('tag-click');">
                                     Previous week
                                 </button>
+
                                 <button class="tag is-outlined is-primary button"
                                         @click.stop="EDIT_THISMONTH(); modeAbsolute(); fold(); $emit('tag-click');">
                                     This month
                                 </button>
+
                                 <button class="tag is-outlined is-primary button"
                                         @click.stop="EDIT_PREVIOUSMONTH(); modeAbsolute(); fold(); $emit('tag-click');">
                                     Previous month
                                 </button>
+
                                 <button class="tag is-outlined is-primary button"
                                         @click.stop="EDIT_THISYEAR(); modeAbsolute(); fold(); $emit('tag-click');">
                                     This year
                                 </button>
+
                                 <button class="tag is-outlined is-primary button"
                                         @click.stop="EDIT_PREVIOUSYEAR(); modeAbsolute(); fold(); $emit('tag-click');">
                                     Previous year
                                 </button>
+
                                 <button class="tag is-outlined is-primary button"
                                         @click.stop="EDIT_WEEKTODATE(); modeAbsolute(); fold(); $emit('tag-click');">
                                     Week to date
@@ -154,50 +165,62 @@
                                         @click.stop="EDIT_MONTHTODATE(); modeAbsolute(); fold(); $emit('tag-click');">
                                     Month to date
                                 </button>
+
                                 <button class="tag is-outlined is-primary button"
                                         @click.stop="EDIT_YEARTODATE(); modeAbsolute(); fold(); $emit('tag-click');">
                                     Year to date
                                 </button>
+
                                 <button class="tag is-outlined is-primary button"
                                         @click.stop="EDIT_LAST15MINUTES(); modeAbsolute(); fold(); $emit('tag-click');">
                                     Last 15 minutes
                                 </button>
+
                                 <button class="tag is-outlined is-primary button"
                                         @click.stop="EDIT_LAST30MINUTES(); modeAbsolute(); fold(); $emit('tag-click');">
                                     Last 30 minutes
                                 </button>
+
                                 <button class="tag is-outlined is-primary button"
                                         @click.stop="EDIT_LAST45MINUTES(); modeAbsolute(); fold(); $emit('tag-click');">
                                     Last 45 minutes
                                 </button>
+
                                 <button class="tag is-outlined is-primary button"
                                         @click.stop="EDIT_LAST1HOUR(); modeAbsolute(); fold(); $emit('tag-click');">
                                     Last 1 hour
                                 </button>
+
                                 <button class="tag is-outlined is-primary button"
                                         @click.stop="EDIT_LAST4HOURS(); modeAbsolute(); fold(); $emit('tag-click');">
                                     Last 4 hours
                                 </button>
+
                                 <button class="tag is-outlined is-primary button"
                                         @click.stop="EDIT_LAST12HOURS(); modeAbsolute(); fold(); $emit('tag-click');">
                                     Last 12 hours
                                 </button>
+
                                 <button class="tag is-outlined is-primary button"
                                         @click.stop="EDIT_LAST24HOURS(); modeAbsolute(); fold(); $emit('tag-click');">
                                     Last 24 hours
                                 </button>
+
                                 <button class="tag is-outlined is-primary button"
                                         @click.stop="EDIT_LAST7DAYS(); modeAbsolute(); fold(); $emit('tag-click');">
                                     Last 7 days
                                 </button>
+
                                 <button class="tag is-outlined is-primary button"
                                         @click.stop="EDIT_LAST30DAYS(); modeAbsolute(); fold(); $emit('tag-click');">
                                     Last 30 days
                                 </button>
+
                                 <button class="tag is-outlined is-primary button"
                                         @click.stop="EDIT_LAST60DAYS(); modeAbsolute(); fold(); $emit('tag-click');">
                                     Last 60 days
                                 </button>
+
                                 <button class="tag is-outlined is-primary button"
                                         @click.stop="EDIT_LAST90DAYS(); modeAbsolute(); fold(); $emit('tag-click');">
                                     Last 90 days
@@ -212,10 +235,12 @@
                                         @click.stop="EDIT_LAST1YEAR(); modeAbsolute(); fold(); $emit('tag-click');">
                                     Last 1 year
                                 </button>
+
                                 <button class="tag is-outlined is-primary button"
                                         @click.stop="EDIT_LAST2YEARS(); modeAbsolute(); fold(); $emit('tag-click');">
                                     Last 2 years
                                 </button>
+
                                 <button class="tag is-outlined is-primary button"
                                         @click.stop="EDIT_LAST5YEARS(); modeAbsolute(); fold(); $emit('tag-click');">
                                     Last 5 years
