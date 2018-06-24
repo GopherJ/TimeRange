@@ -20,13 +20,20 @@
                             <div class="field">
                                 <button
                                     class="button is-outlined is-primary"
+                                    @click.stop="modeRelative">
+                                    Relative
+                                </button>
+                            </div>
+                            <div class="field">
+                                <button
+                                    class="button is-outlined is-primary"
                                     @click.stop="modeAbsolute">
                                     Absolute
                                 </button>
                             </div>
                         </div>
 
-                        <!--dateTimeStart picker container-->
+                        <!--dateTimeStart picker -->
                         <div class="column is-two-fifths" v-show="mode === 'absolute'">
                             <!--dateTimeStart picker label-->
                             <div class="level">
@@ -65,6 +72,7 @@
                             </div>
 
                         </div>
+                        <!-- dateTimeEnd picker -->
                         <div class="column is-two-fifths" v-show="mode === 'absolute'">
                             <!--dateTimeEnd picker label-->
                             <div class="level">
@@ -102,6 +110,64 @@
                                 </b-timepicker>
                             </div>
 
+                        </div>
+
+
+                        <!-- relativeStart picker -->
+                        <div class="column is-two-fifths" v-show="mode === 'relative'">
+                            <div class="level">
+                                <div class="level-left">
+                                    <label for="b-datepicker-start"
+                                           class="cursor-pointer label tag is-primary is-medium"
+                                           v-text="labelStart">
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="columns field has-addons is-gapless">
+                                <b-input
+                                    icon="calendar"
+                                    v-model="rValStart"
+                                    class="control column is-three-fifths is-samll"
+                                    type="number">
+                                </b-input>
+                                <b-select
+                                    v-model="rValStartUnit"
+                                    icon="clock"
+                                    class="control column is-two-fifths is-small is-fullwidth">
+                                    <template v-for="option of timeAgoFromNow">
+                                        <option v-for="(value, key) in option" :value="value" :key="key">{{ key }}</option>
+                                    </template>
+                                </b-select>
+                            </div>
+                        </div>
+
+                        <!-- relativeEnd picker -->
+                        <div class="column is-two-fifths" v-show="mode === 'relative'">
+                            <div class="level">
+                                <div class="level-left">
+                                    <label for="b-datepicker-start"
+                                           class="cursor-pointer label tag is-primary is-medium"
+                                           v-text="labelEnd">
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="columns is-gapless field has-addons">
+                                <b-input
+                                    icon="clock"
+                                    v-model="rValEnd"
+                                    class="column is-three-fifths"
+                                    type="number">
+                                </b-input>
+                                <b-select
+                                    v-model="rValEndUnit"
+                                    class="column is-two-fifths is-expanded">
+                                    <template v-for="option of timeAgoFromNow">
+                                        <option v-for="(value, key) in option" :value="value" :key="key">{{ key }}</option>
+                                    </template>
+                                </b-select>
+                            </div>
                         </div>
 
                         <!--mode quick tags-->
@@ -247,7 +313,6 @@
                                 </button>
                             </b-taglist>
                         </div>
-
                     </div>
                 </div>
             </section>
@@ -277,10 +342,18 @@
         name: 'time-range',
         data() {
             return {
+                isOpen: true,
+
                 eventsStart: [],
                 eventsEnd: [],
+
                 mode: 'absolute',
-                isOpen: true,
+
+                rValStart: 0,
+                rValEnd: 0,
+
+                rValStartUnit: -86400000,
+                rValEndUnit: 86400000
             };
         },
         props: {
@@ -300,6 +373,24 @@
                 type: Boolean,
                 default: () => (false),
             },
+            timeAgoFromNow: {
+                type: Array,
+                default: () => [
+                    { 'Seconds Ago' : -1000 },
+                    { 'Minutes Ago' : -60000 },
+                    { 'Hours Ago' : -360000 },
+                    { 'Days Ago' : -86400000 },
+                    { 'Months Ago' : -2592000000 },
+                    { 'Years Ago' : -31536000000 },
+
+                    { 'Seconds From Now' : 1000 },
+                    { 'Minutes From Now' : 60000 },
+                    { 'Hours From Now' : 360000 },
+                    { 'Days From Now' : 86400000 },
+                    { 'Months From Now' : 2592000000 },
+                    { 'Years From Now' : 31536000000 },
+                ]
+            }
         },
         watch: {
             ED(n) {
@@ -391,6 +482,12 @@
             modeQuick() {
                 this.mode = 'quick';
             },
+            modeAbsolute() {
+                this.mode = 'absolute';
+            },
+            modeRelative() {
+                this.mode = 'relative';
+            },
             setToNowStart() {
                 const date = new Date();
                 this.EDIT_DATE_TIME_START(new Date(date.valueOf() - 1000 * 15 * 60));
@@ -398,8 +495,16 @@
             setToNowEnd() {
                 this.EDIT_DATE_TIME_END(new Date());
             },
-            modeAbsolute() {
-                this.mode = 'absolute';
+            setTimeAgoFromNowStart() {
+                const val = this.rValStart,
+                    unit = this.rValStartUnit,
+                    dateTimeStartVal = this.dateTimeStart.valueOf();
+
+                const newVal = dateTimeStartVal + val * unit;
+
+            },
+            setTimeAgoFromNowEnd() {
+
             },
             fold() {
                 const autoFold = this.autoFold;
