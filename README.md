@@ -10,8 +10,6 @@ Time Range Picker Based On Buefy And Vue
 ## Installation
 
 ```javascript
-npm i -S GopherJ/TimeRange
-
 npm i -S vue-time-range
 ```
 
@@ -22,7 +20,7 @@ npm i -S vue-time-range
 ```javascript
 import Vue from 'vue';
 import Vuex from 'vuex';
-import TimeRange from 'TimeRange';
+import TimeRange from 'vue-time-range';
 import Buefy from 'buefy';
 import 'buefy/lib/buefy.min.css';
 
@@ -33,6 +31,11 @@ const store = new Vuex.Store();
 
 Vue.use(TimeRange, {
   store
+});
+
+new Vue({
+    store,
+    //...
 });
 ```
 
@@ -63,4 +66,6 @@ this.$store.commit('TimeRange/EDIT_DATE_TIME_END', new Date())
 
 
 ## Demo
-![](./images/TimeRange.PNG)
+
+![](./images/TimeRangeAbsolute.PNG)
+![](./images/TimeRangeQuick.PNG)
