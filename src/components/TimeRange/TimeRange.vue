@@ -659,7 +659,7 @@
 
 <style scoped>
     .min-height {
-        min-height: 8rem;
+        min-height: 6rem;
     }
 
     .subtitle {

@@ -1,6 +1,6 @@
 {
   "name": "vue-time-range",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "vue time range picker",
   "main": "dist/TimeRange.min.js",
   "scripts": {
