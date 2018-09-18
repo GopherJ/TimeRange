@@ -10,13 +10,13 @@
 
         <div :class="{ 'panel-block': !!labelPanel}">
             <section class="section" :class="{ 'control' : !!labelPanel }">
-                <div class="container is-fluid min-height">
                     <div class="columns">
                         <!--mode buttons-->
                         <div class="column is-one-fifth">
-                            <div class="field">
+                            <div class="field" style="margin-bottom: 1.5rem;">
                                 <button class="button is-outlined is-primary" @click.stop="modeQuick">Quick</button>
                             </div>
+
                             <div class="field">
                                 <button
                                     class="button is-outlined is-primary"
@@ -36,6 +36,7 @@
                                            v-text="labelStart">
                                     </label>
                                 </div>
+
                                 <div class="level-right subtitle">
                                     <button class="button is-light" @click.stop="setToNowStart">Set To Now</button>
                                 </div>
@@ -63,7 +64,6 @@
                                     hour-format="24">
                                 </b-timepicker>
                             </div>
-
                         </div>
                         <div class="column is-two-fifths" v-show="mode === 'absolute'">
                             <!--dateTimeEnd picker label-->
@@ -247,9 +247,7 @@
                                 </button>
                             </b-taglist>
                         </div>
-
                     </div>
-                </div>
             </section>
         </div>
     </b-collapse>
