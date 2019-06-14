@@ -50,6 +50,8 @@
                                     icon="calendar-today"
                                     class="control column is-three-fifths"
                                     indicators="dots"
+                                    :date-formatter="dateFormatter"
+                                    :date-parser="dateParser"
                                     :events="eventsStart"
                                     :max-date="maxDate"
                                     rounded>
@@ -86,6 +88,8 @@
                                     icon="calendar-today"
                                     id="b-datepicker-end"
                                     class="control column is-three-fifths"
+                                    :date-formatter="dateFormatter"
+                                    :date-parser="dateParser"
                                     indicators="dots"
                                     :events="eventsEnd"
                                     :min-date="minDate"
@@ -420,6 +424,16 @@
                     position: 'is-top',
                 });
             },
+            dateFormatter(d) {
+                const [Y, M, D] = [d.getFullYear(), d.getMonth(), d.getDate()];
+
+                return `${D.toString().padStart(2, '0')}/${(M + 1).toString().padStart(2, '0')}/${Y}`;
+            },
+            dateParser(d) {
+                const [D, M, Y] = d.split('/').map(x => +x);
+
+                return new Date(Y, M - 1, D);
+            }
         },
         computed: {
             ...mapState('TimeRange', [
