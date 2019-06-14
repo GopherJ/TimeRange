@@ -506,25 +506,28 @@
                         return;
                     }
 
-                    if (
-                        this.yearStart === this.yearEnd &&
-                        this.monthStart === this.monthEnd &&
-                        this.dayStart === this.dayEnd
-                    ) {
-                        if (h > this.hourEnd || (h === this.hourEnd && m > this.minuteEnd)) {
-                            this.warningStart();
-                        } else {
-                            this.EDIT_DATE_TIME_START(
-                                new Date(
-                                    this.yearStart,
-                                    this.monthStart,
-                                    this.dayStart,
-                                    h,
-                                    m,
-                                    0,
-                                ),
-                            );
-                        }
+                    const s = new Date(
+                        this.yearStart,
+                        this.monthStart,
+                        this.dayStart,
+                        h,
+                        m,
+                        0
+                    );
+
+                    const e = new Date(
+                        this.yearEnd,
+                        this.monthEnd,
+                        this.dayEnd,
+                        this.hourEnd,
+                        this.minuteEnd,
+                        0
+                    );
+
+                    if (s < e) {
+                        this.EDIT_DATE_TIME_START(s);
+                    } else {
+                        this.warningStart();
                     }
                 },
             },
@@ -571,25 +574,28 @@
                         return;
                     }
 
-                    if (
-                        this.yearStart === this.yearEnd &&
-                        this.monthStart === this.monthEnd &&
-                        this.dayStart === this.dayEnd
-                    ) {
-                        if (h < this.hourStart || (h === this.hourStart && m < this.minuteStart)) {
-                            this.warningEnd();
-                        } else {
-                            this.EDIT_DATE_TIME_END(
-                                new Date(
-                                    this.yearEnd,
-                                    this.monthEnd,
-                                    this.dayEnd,
-                                    h,
-                                    m,
-                                    0,
-                                ),
-                            );
-                        }
+                    const s = new Date(
+                        this.yearStart,
+                        this.monthStart,
+                        this.dayStart,
+                        this.hourStart,
+                        this.minuteStart,
+                        0
+                    );
+
+                    const e = new Date(
+                        this.yearEnd,
+                        this.monthEnd,
+                        this.dayEnd,
+                        h,
+                        m,
+                        0
+                    );
+
+                    if (s < e) {
+                        this.EDIT_DATE_TIME_END(e);
+                    } else {
+                        this.warningEnd();
                     }
                 },
             },
