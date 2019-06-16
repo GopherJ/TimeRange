@@ -38,7 +38,7 @@
                                 </div>
 
                                 <div class="level-right subtitle">
-                                    <button class="button is-light" @click.stop="setToNowStart">Set To Now</button>
+                                    <button class="button is-light" @click.stop="setToNowStart">Set To 15Minutes Ago</button>
                                 </div>
                             </div>
 
@@ -59,7 +59,7 @@
                                 <b-timepicker
                                     v-model="ST"
                                     icon="clock"
-                                    :readonly="false"
+                                    :editable="false"
                                     class="control column is-two-fifths"
                                     :max-time="maxTime"
                                     rounded
@@ -98,7 +98,7 @@
                                 <b-timepicker
                                     v-model="ET"
                                     icon="clock"
-                                    :readonly="false"
+                                    :editable="false"
                                     class="control column is-two-fifths"
                                     rounded
                                     :min-time="minTime"

@@ -1,6 +1,6 @@
 {
     "name": "vue-time-range",
-    "version": "0.0.9",
+    "version": "0.1.0",
     "description": "vue time range picker",
     "main": "dist/TimeRange.min.js",
     "scripts": {
@@ -21,7 +21,7 @@
         "buefy"
     ],
     "dependencies": {
-        "buefy": "^0.7.6",
+        "buefy": "^0.7.7",
         "lodash": "^4.17.5",
         "moment": "^2.21.0",
         "vue": "^2.5.13",
