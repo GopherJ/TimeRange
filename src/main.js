@@ -4,7 +4,7 @@ import TimeRangeStore from './store/TimeRangeStore';
 
 const install = (Vue, options = {}) => {
     if (options.store) {
-        options.store.registerModule('TimeRange', TimeRangeStore);
+        options.store.registerModule('TimeRange', TimeRangeStore());
     }
 
     Vue.component(TimeRange.name, TimeRange);
