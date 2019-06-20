@@ -275,6 +275,36 @@
         return colors[Math.floor(Math.random() * colors.length)];
     };
 
+    const mutationWrapper = (mutations) => {
+        return mutations.reduce((ite, cur) => {
+            ite[cur] = function(commit, payload) {
+                return commit(this.namespace + '/' + cur, payload);
+            };
+
+            return ite;
+        }, {});
+    };
+
+    const getterWrapper = (getters) => {
+        return getters.reduce((ite, cur) => {
+            ite[cur] = function(state, getters) {
+                return getters[this.namespace + '/' + cur];
+            };
+
+            return ite;
+        }, {});
+    };
+
+    const stateWrapper = (states) => {
+        return states.reduce((ite, cur) => {
+            ite[cur] = function(state) {
+                return state[this.namespace][cur];
+            };
+
+            return ite;
+        }, {});
+    };
+
     export default {
         name: 'time-range',
         data() {
@@ -302,6 +332,10 @@
                 type: Boolean,
                 default: () => (false),
             },
+            namespace: {
+                type: String,
+                default: () => ('TimeRange')
+            }
         },
         watch: {
             ED(n) {
@@ -357,10 +391,9 @@
             },
         },
         methods: {
-            ...mapMutations('TimeRange', [
+            ...mapMutations(mutationWrapper([
                 'EDIT_DATE_TIME_START',
                 'EDIT_DATE_TIME_END',
-
                 'EDIT_LAST15MINUTES',
                 'EDIT_LAST30MINUTES',
                 'EDIT_LAST45MINUTES',
@@ -389,7 +422,7 @@
                 'EDIT_PREVIOUSWEEK',
                 'EDIT_PREVIOUSMONTH',
                 'EDIT_PREVIOUSYEAR'
-            ]),
+            ])),
             modeQuick() {
                 this.mode = 'quick';
             },
@@ -436,11 +469,7 @@
             }
         },
         computed: {
-            ...mapState('TimeRange', [
-                'dateTimeStart',
-                'dateTimeEnd',
-            ]),
-            ...mapGetters('TimeRange', [
+            ...mapState(getterWrapper([
                 'hourStart',
                 'minuteStart',
                 'secondStart',
@@ -453,7 +482,11 @@
                 'yearEnd',
                 'monthEnd',
                 'dayEnd',
-            ]),
+            ])),
+            ...mapState(stateWrapper([
+                'dateTimeStart',
+                'dateTimeEnd',
+            ])),
             subtitle: {
                 get() {
                     const dateTimeStart = this.dateTimeStart;
