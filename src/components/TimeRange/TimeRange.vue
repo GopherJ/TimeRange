@@ -9,7 +9,7 @@
         </div>
 
         <div :class="{ 'panel-block': !!labelPanel}">
-            <section class="section" :class="{ 'control' : !!labelPanel }">
+            <section :class="{ 'control': !!labelPanel, 'section': hasPadding }">
                     <div class="columns">
                         <!--mode buttons-->
                         <div class="column is-one-fifth">
@@ -336,6 +336,10 @@
             namespace: {
                 type: String,
                 default: () => ('TimeRange')
+            },
+            hasPadding: {
+                type: Boolean,
+                default: () => (true)
             }
         },
         watch: {
