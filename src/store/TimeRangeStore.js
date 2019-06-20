@@ -74,6 +74,13 @@ export default () => ({
             }
         },
 
+        EDIT_DATE_TIME(state, [from, to]) {
+            if (isValidDate(from) && isValidDate(to)) {
+                state.dateTimeStart = from;
+                state.dateTimeEnd = to;
+            }
+        },
+
         // mutations for quickly choosing a time range
         EDIT_LAST15MINUTES(s) {
             const date = new Date();

@@ -261,6 +261,7 @@
     /* eslint-disable */
     import {mapState, mapGetters, mapMutations} from 'vuex';
     import moment from 'moment';
+    import {debounce} from 'lodash';
 
     const RANDOM_COLOR = () => {
         const colors = [
@@ -690,7 +691,7 @@
             this.unwatch = this.$watch(vm => [
                 vm.dateTimeStart.valueOf(),
                 vm.dateTimeEnd.valueOf()
-            ].join('-'), function (n, o) {
+            ].join('-'), debounce(function (n, o) {
                 const TimeRangeOld = o.split('-')
                     .map(el => Number.parseInt(el, 10))
                     .map(timestamp => new Date(timestamp));
@@ -700,7 +701,7 @@
                     .map(timestamp => new Date(timestamp));
 
                 this.$emit('time-range-change', TimeRangeNew, TimeRangeOld);
-            });
+            }, 250));
         },
         beforeDestroy() {
             this.unwatch();
