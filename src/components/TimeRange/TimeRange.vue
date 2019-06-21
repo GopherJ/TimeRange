@@ -105,7 +105,6 @@
                                     hour-format="24">
                                 </b-timepicker>
                             </div>
-
                         </div>
 
                         <!--mode quick tags-->
@@ -447,6 +446,9 @@
                 if (autoFold) {
                     this.isOpen = false;
                 }
+            },
+            toggleFold() {
+                this.isOpen = !this.isOpen;
             },
             warningStart() {
                 this.$snackbar.open({

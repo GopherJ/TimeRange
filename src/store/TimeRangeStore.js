@@ -74,7 +74,7 @@ export default () => ({
             }
         },
 
-        EDIT_DATE_TIME(state, [from, to]) {
+        EDIT_DATE_TIME_RANGE(state, [from, to]) {
             if (isValidDate(from) && isValidDate(to)) {
                 state.dateTimeStart = from;
                 state.dateTimeEnd = to;
