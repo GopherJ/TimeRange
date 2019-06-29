@@ -12,7 +12,7 @@
             <section :class="{ 'control': !!labelPanel, 'section': hasPadding }">
                     <div class="columns is-vcentered">
                         <!--mode buttons-->
-                        <div class="column is-one-fifth">
+                        <div class="column is-one-fifth is-hidden-mobile">
                             <div class="field" style="margin-bottom: 1.5rem;">
                                 <button class="button is-outlined is-primary" @click.stop="modeQuick">Quick</button>
                             </div>
@@ -27,9 +27,9 @@
                         </div>
 
                         <!--dateTimeStart picker container-->
-                        <div class="column is-two-fifths" v-show="mode === 'absolute'">
+                        <div class="column is-two-fifths is-full-mobile" v-show="mode === 'absolute'">
                             <!--dateTimeStart picker label-->
-                            <div class="level">
+                            <div class="level is-mobile">
                                 <div class="level-left">
                                     <label for="b-datepicker-start"
                                            class="cursor-pointer label tag is-primary is-medium"
@@ -67,9 +67,9 @@
                                 </b-timepicker>
                             </div>
                         </div>
-                        <div class="column is-two-fifths" v-show="mode === 'absolute'">
+                        <div class="column is-two-fifths is-full-mobile" v-show="mode === 'absolute'">
                             <!--dateTimeEnd picker label-->
-                            <div class="level">
+                            <div class="level is-mobile">
                                 <div class="level-left">
                                     <label for="b-datepicker-end"
                                            class="cursor-pointer label tag is-primary is-medium"
