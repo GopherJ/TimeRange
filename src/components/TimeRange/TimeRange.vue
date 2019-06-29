@@ -10,7 +10,7 @@
 
         <div :class="{ 'panel-block': !!labelPanel}">
             <section :class="{ 'control': !!labelPanel, 'section': hasPadding }">
-                    <div class="columns">
+                    <div class="columns is-vcentered">
                         <!--mode buttons-->
                         <div class="column is-one-fifth">
                             <div class="field" style="margin-bottom: 1.5rem;">
