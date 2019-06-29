@@ -8,9 +8,9 @@
             </strong>
         </div>
 
-        <div :class="{ 'panel-block': !!labelPanel}">
+        <div :class="{ 'panel-block': !!labelPanel }">
             <section :class="{ 'control': !!labelPanel, 'section': hasPadding }">
-                    <div class="columns is-vcentered">
+                    <div class="columns is-vcentered min-height">
                         <!--mode buttons-->
                         <div class="column is-one-fifth is-hidden-mobile">
                             <div class="field" style="margin-bottom: 1.5rem;">
@@ -717,7 +717,7 @@
 
 <style scoped>
     .min-height {
-        min-height: 6rem;
+        min-height: 9rem;
     }
 
     .subtitle {
